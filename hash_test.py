@@ -18,11 +18,13 @@ hash_count = 0
 while True:
     # Hash generálása (SHA-256 algoritmus használatával)
     current_hash = hashlib.sha256(data_string.encode()).hexdigest()
+    if hash_count ==  0:
+        print(f"Initial hash: {current_hash}", end="\n")
     hash_count += 1
 
     # Csak minden 1000. ciklus után frissítse a kiírást
     if hash_count % 10000 == 0:
-        print(f"\rGenerálások száma: {hash_count}", end="", flush=True)
+        print(f"\rCurrent hash: {current_hash} | Generálások száma: {hash_count}", end="", flush=True)
 
     # Ha az előző hash nem üres (tehát már történt egy hash generálás), ellenőrizzük, hogy eltérőek-e
     if previous_hash and current_hash != previous_hash:
