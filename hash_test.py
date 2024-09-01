@@ -20,8 +20,9 @@ while True:
     current_hash = hashlib.sha256(data_string.encode()).hexdigest()
     hash_count += 1
 
-    # Kiírás ugyanabba a sorba
-    print(f"\rGenerálások száma: {hash_count}", end="", flush=True)
+    # Csak minden 1000. ciklus után frissítse a kiírást
+    if hash_count % 10000 == 0:
+        print(f"\rGenerálások száma: {hash_count}", end="", flush=True)
 
     # Ha az előző hash nem üres (tehát már történt egy hash generálás), ellenőrizzük, hogy eltérőek-e
     if previous_hash and current_hash != previous_hash:
