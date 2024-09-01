@@ -3,3 +3,5 @@ Adott adatcsomagra készít ismétlődően hash értéket és figyeli, ha eltér
 Ezzel az algoritmus hibázását lehet tesztelni.
 
 FIGYELEM!  Ez egy 'pancserteszt', semmi tudományos, vagy szakmai alapja nincs. :)
+
+első körben 5789460000 hash teszt futott le, hiba nélkül
